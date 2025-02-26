@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.43dc9090.css",
-    "main.js": "/static/js/main.5f4cac12.js",
-    "static/js/453.7bebd01e.chunk.js": "/static/js/453.7bebd01e.chunk.js",
-    "index.html": "/index.html",
-    "main.43dc9090.css.map": "/static/css/main.43dc9090.css.map",
-    "main.5f4cac12.js.map": "/static/js/main.5f4cac12.js.map",
-    "453.7bebd01e.chunk.js.map": "/static/js/453.7bebd01e.chunk.js.map"
+    "main.css": "/my-iceland-trip-website/static/css/main.43dc9090.css",
+    "main.js": "/my-iceland-trip-website/static/js/main.dd386703.js",
+    "static/js/453.7bebd01e.chunk.js": "/my-iceland-trip-website/static/js/453.7bebd01e.chunk.js",
+    "index.html": "/my-iceland-trip-website/index.html",
+    "main.43dc9090.css.map": "/my-iceland-trip-website/static/css/main.43dc9090.css.map",
+    "main.dd386703.js.map": "/my-iceland-trip-website/static/js/main.dd386703.js.map",
+    "453.7bebd01e.chunk.js.map": "/my-iceland-trip-website/static/js/453.7bebd01e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43dc9090.css",
-    "static/js/main.5f4cac12.js"
+    "static/js/main.dd386703.js"
   ]
 }

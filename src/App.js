@@ -1,11 +1,11 @@
+// src/App.js
 import React from 'react';
-import './App.css';
-import TravelItinerary from './components/TravelItinerary';
+import IcelandTripHub from './components/iceland-trip/IcelandTripHub';
 
 function App() {
   return (
     <div className="App">
-      <TravelItinerary />
+      <IcelandTripHub />
     </div>
   );
 }

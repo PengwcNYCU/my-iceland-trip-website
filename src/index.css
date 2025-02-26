@@ -1,3 +1,4 @@
+/* stylelint-disable at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,4 +15,172 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* 
+  將此內容添加到您的 src/index.css 或創建一個新文件
+  例如 src/components/iceland-trip/weatherAnimations.css 然後在 EnhancedWeatherWidget.js 頂部導入
+*/
+
+/* 基本淡入淡出動畫 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 標籤頁切換過渡動畫 */
+@keyframes tabTransition {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-tab-transition {
+  animation: tabTransition 0.4s ease-out;
+}
+
+/* 溫度上升動畫 */
+@keyframes tempUp {
+  0% { transform: translateY(0); }
+  50% { color: #ef4444; transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-temp-up {
+  animation: tempUp 1s ease-out;
+}
+
+/* 溫度下降動畫 */
+@keyframes tempDown {
+  0% { transform: translateY(0); }
+  50% { color: #3b82f6; transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-temp-down {
+  animation: tempDown 1s ease-out;
+}
+
+/* 天氣圖標動畫 */
+
+/* 太陽旋轉動畫 (較慢) */
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 雲朵飄動動畫 */
+@keyframes cloud {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-cloud {
+  animation: cloud 5s ease-in-out infinite;
+}
+
+/* 雨滴下落動畫 */
+@keyframes rain {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(2px) scale(0.97); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.animate-rain {
+  animation: rain 1.5s ease-in-out infinite;
+}
+
+/* 雪花飄動動畫 */
+@keyframes snow {
+  0% { transform: translateY(0) rotate(0); }
+  25% { transform: translateY(2px) rotate(5deg); }
+  50% { transform: translateY(0) rotate(0); }
+  75% { transform: translateY(2px) rotate(-5deg); }
+  100% { transform: translateY(0) rotate(0); }
+}
+
+.animate-snow {
+  animation: snow 3s ease-in-out infinite;
+}
+
+/* 霧氣動畫 */
+@keyframes mist {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.animate-mist {
+  animation: mist 4s ease-in-out infinite;
+}
+
+/* 雷電動畫 */
+@keyframes thunder {
+  0% { transform: scale(1); filter: brightness(1); }
+  3% { transform: scale(1.1); filter: brightness(1.5); }
+  6% { transform: scale(1); filter: brightness(1); }
+  9% { transform: scale(1.05); filter: brightness(1.2); }
+  12% { transform: scale(1); filter: brightness(1); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+.animate-thunder {
+  animation: thunder 5s ease-out infinite;
+}
+
+/* 輕微彈跳動畫 (較慢) */
+@keyframes bounceSlow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2s ease-in-out infinite;
+}
+
+/* 風向指示器動畫 */
+@keyframes windDirection {
+  0% { transform: rotate(var(--wind-deg)); }
+  25% { transform: rotate(calc(var(--wind-deg) - 5deg)); }
+  75% { transform: rotate(calc(var(--wind-deg) + 5deg)); }
+  100% { transform: rotate(var(--wind-deg)); }
+}
+
+.animate-wind-direction {
+  --wind-deg: 0deg;
+  animation: windDirection 3s ease-in-out infinite;
+}
+
+/* 輕微脈動動畫 */
+@keyframes pulseSlow {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s ease-in-out infinite;
+}
+
+/* 卡片縮放 */
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+/* 激活時的壓縮效果 */
+.active\:scale-95:active {
+  transform: scale(0.95);
 }
