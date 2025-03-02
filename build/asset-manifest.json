@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/my-iceland-trip-website/static/css/main.ebbba8ac.css",
-    "main.js": "/my-iceland-trip-website/static/js/main.d30bbdc9.js",
+    "main.js": "/my-iceland-trip-website/static/js/main.31824d98.js",
     "index.html": "/my-iceland-trip-website/index.html",
     "main.ebbba8ac.css.map": "/my-iceland-trip-website/static/css/main.ebbba8ac.css.map",
-    "main.d30bbdc9.js.map": "/my-iceland-trip-website/static/js/main.d30bbdc9.js.map"
+    "main.31824d98.js.map": "/my-iceland-trip-website/static/js/main.31824d98.js.map"
   },
   "entrypoints": [
     "static/css/main.ebbba8ac.css",
-    "static/js/main.d30bbdc9.js"
+    "static/js/main.31824d98.js"
   ]
 }
