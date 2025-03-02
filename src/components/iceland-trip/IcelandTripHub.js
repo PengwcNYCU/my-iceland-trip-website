@@ -1,7 +1,6 @@
-// src/components/iceland-trip/IcelandTripHub.js
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Calendar, MapPin, Sun, Moon, Menu, X, 
-  Compass, Info } from 'lucide-react';
+  Compass, Info, RefreshCw } from 'lucide-react';
 
 import { ThemeProvider, useTheme } from './themeContext';
 import MapComponent, { FallbackMapComponent } from './MapComponent';
@@ -12,13 +11,24 @@ import PenguinPet from './PenguinPet';
 
 // 主要應用組件
 const IcelandTripContent = () => {
-  const { darkMode, toggleDarkMode, theme } = useTheme();
+  const { 
+    darkMode, 
+    toggleDarkMode, 
+    theme, 
+    isAutoThemeEnabled, 
+    enableAutoTheme 
+  } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [activeSection, setActiveSection] = useState('itinerary');
   
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // 處理主題切換，手動模式
+  const handleThemeToggle = () => {
+    toggleDarkMode(true);
   };
 
   return (
@@ -44,23 +54,47 @@ const IcelandTripContent = () => {
               <Info className="h-4 w-4" />
               <span>即時資訊</span>
             </button>
-            <button 
-              onClick={toggleDarkMode} 
-              className={`ml-4 p-2 rounded-full ${darkMode ? 'bg-yellow-400 text-gray-800' : 'bg-blue-900 text-white'}`}
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </button>
+            <div className="flex items-center space-x-2">
+              <button 
+                onClick={handleThemeToggle} 
+                className={`p-2 rounded-full ${darkMode ? 'bg-yellow-400 text-gray-800' : 'bg-blue-900 text-white'}`}
+                aria-label="Toggle dark mode"
+              >
+                {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              </button>
+              {!isAutoThemeEnabled && (
+                <button 
+                  onClick={enableAutoTheme} 
+                  className={`p-2 rounded-full ${theme.button} text-white`}
+                  aria-label="Enable auto theme"
+                  title="恢復自動主題模式"
+                >
+                  <RefreshCw className="h-4 w-4" />
+                </button>
+              )}
+            </div>
           </div>
           
           <div className="flex items-center space-x-2 md:hidden">
-            <button 
-              onClick={toggleDarkMode} 
-              className={`p-2 rounded-full ${darkMode ? 'bg-yellow-400 text-gray-800' : 'bg-blue-900 text-white'}`}
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </button>
+            <div className="flex items-center space-x-2">
+              <button 
+                onClick={handleThemeToggle} 
+                className={`p-2 rounded-full ${darkMode ? 'bg-yellow-400 text-gray-800' : 'bg-blue-900 text-white'}`}
+                aria-label="Toggle dark mode"
+              >
+                {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              </button>
+              {!isAutoThemeEnabled && (
+                <button 
+                  onClick={enableAutoTheme} 
+                  className={`p-2 rounded-full ${theme.button} text-white`}
+                  aria-label="Enable auto theme"
+                  title="恢復自動主題模式"
+                >
+                  <RefreshCw className="h-4 w-4" />
+                </button>
+              )}
+            </div>
             <button onClick={toggleMenu} className="text-current focus:outline-none">
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
