@@ -1,9 +1,9 @@
 // src/components/iceland-trip/EnhancedWeatherWidget.js
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  CloudSnow, Wind, Droplets, Thermometer, Sun, Sunset, Eye, 
-  CloudRain, Clock, ArrowDown, ArrowUp, Compass, Gauge, 
-  Navigation, RefreshCw, Info, AlertTriangle
+  CloudSnow, Wind, Droplets, Thermometer, RefreshCw, 
+  CloudRain, ArrowDown, ArrowUp, Compass, Gauge, 
+  Navigation, Info, AlertTriangle
 } from 'lucide-react';
 
 const EnhancedWeatherWidget = ({ theme }) => {
@@ -91,8 +91,6 @@ const EnhancedWeatherWidget = ({ theme }) => {
         ...currentData,
         main: {
           ...currentData.main,
-          sunrise: currentData.sys.sunrise,
-          sunset: currentData.sys.sunset,
           visibility: currentData.visibility
         }
       });
@@ -241,7 +239,7 @@ const EnhancedWeatherWidget = ({ theme }) => {
     return `最後更新: ${lastUpdated.toLocaleTimeString('zh-TW')}`;
   };
 
-  // 渲染當前天氣板塊
+  // 渲染當前天氣板塊 - 簡化版，移除了日出日落信息
   const renderCurrentWeather = () => {
     if (!currentWeather) return null;
     
@@ -291,7 +289,7 @@ const EnhancedWeatherWidget = ({ theme }) => {
           </div>
         </div>
         
-        {/* 天氣詳情網格 */}
+        {/* 天氣詳情網格 - 簡化版，保留重要的指標 */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
           {/* 風速 */}
           <div className={`${theme.cardBg} p-3 rounded-lg transform transition hover:scale-105`}>
@@ -343,61 +341,11 @@ const EnhancedWeatherWidget = ({ theme }) => {
           {/* 能見度 */}
           <div className={`${theme.cardBg} p-3 rounded-lg transform transition hover:scale-105`}>
             <div className="flex items-center mb-1">
-              <Eye className={`mr-1 h-4 w-4 ${theme.highlight}`} />
-              <div className="text-sm font-medium">能見度</div>
+              <Thermometer className={`mr-1 h-4 w-4 ${theme.highlight}`} />
+              <div className="text-sm font-medium">體感溫度</div>
             </div>
-            <div>{(main.visibility / 1000).toFixed(1)} km</div>
+            <div>{Math.round(main.feels_like)}°C</div>
           </div>
-        </div>
-        
-        {/* 日出/日落 */}
-        <div 
-          className={`${theme.cardBg} p-3 rounded-lg transform transition hover:shadow-lg`}
-          onMouseEnter={() => setShowTooltip('sun')}
-          onMouseLeave={() => setShowTooltip(null)}
-        >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <Sun className={`mr-1 h-4 w-4 ${isDarkMode ? 'text-amber-300 animate-spin-slow' : 'text-amber-500 animate-spin-slow'}`} />
-              <div className="text-sm">日出 {formatTime(main.sunrise)}</div>
-            </div>
-            <div className="flex items-center">
-              <Sunset className={`mr-1 h-4 w-4 ${isDarkMode ? 'text-orange-300' : 'text-orange-500'}`} />
-              <div className="text-sm">日落 {formatTime(main.sunset)}</div>
-            </div>
-          </div>
-          
-          <div className="mt-2 relative h-3 bg-gray-200 rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-400 transition-all duration-1000" 
-              style={{ width: '100%' }}
-            ></div>
-            
-            {/* 當前時間標記 */}
-            {(() => {
-              const now = Math.floor(Date.now() / 1000);
-              const sunrise = main.sunrise;
-              const sunset = main.sunset;
-              const dayLength = sunset - sunrise;
-              const position = ((now - sunrise) / dayLength) * 100;
-              
-              // 白天才顯示
-              if (now >= sunrise && now <= sunset) {
-                return (
-                  <div 
-                    className="absolute top-0 w-1 h-3 bg-red-500"
-                    style={{ left: `${position}%` }}
-                  ></div>
-                );
-              }
-              return null;
-            })()}
-          </div>
-          
-          {/* 太陽路徑動畫提示 */}
-          {showTooltip === 'sun' && (
-            <div className="mt-2 text-xs text-center opacity-70">白天時間：約 {Math.round((main.sunset - main.sunrise) / 3600)} 小時</div>
-          )}
         </div>
       </div>
     );
@@ -618,7 +566,7 @@ const EnhancedWeatherWidget = ({ theme }) => {
       
       {/* 載入中狀態 */}
       {loading ? (
-        <div className="flex flex-col items-center justify-center py-8 animate-fade-in">
+        <div className="flex flex-col items-center justify-center py-6 animate-fade-in">
           <div className={`animate-spin h-10 w-10 border-4 ${theme.darkMode ? 'border-blue-300' : 'border-blue-600'} rounded-full border-t-transparent`}></div>
           <div className="mt-4">正在載入天氣資料...</div>
         </div>
@@ -647,7 +595,7 @@ const EnhancedWeatherWidget = ({ theme }) => {
       <div className="mt-4 pt-3 border-t border-gray-200 border-opacity-30">
         <div className={`text-xs ${theme.secondaryText} flex items-center gap-1`}>
           <Info className="h-3 w-3" />
-          <span>天氣數據由 OpenWeatherMap 提供，可能隨時變動，請以現場實際情況為主</span>
+          <span>天氣數據由 OpenWeatherMap 提供，請以現場實際情況為主</span>
         </div>
       </div>
     </div>

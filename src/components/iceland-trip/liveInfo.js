@@ -1,6 +1,6 @@
 // src/components/iceland-trip/liveInfo.js
 import React, { useState, useEffect } from 'react';
-import { Info, CloudSnow, AlertCircle, ExternalLink, Map, RefreshCw, Wifi, WifiOff, CheckCircle, XCircle, AlertTriangle, HelpCircle } from 'lucide-react';
+import { Info, CloudSnow, AlertCircle, ExternalLink, Map, RefreshCw, Wifi, WifiOff, CheckCircle, XCircle, AlertTriangle, HelpCircle, Moon, Star } from 'lucide-react';
 import { fetchRoadAlerts, getAlertSeverityUI } from '../../utils/rssFetcher';
 import { isDataStale, getLastUpdated } from '../../utils/offlineStorage';
 
@@ -138,7 +138,7 @@ const LiveInfo = ({ theme }) => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 mt-6">
       <div className="flex justify-between items-center">
         <h2 className={`text-xl font-semibold flex items-center gap-2`}>
           <Info className={`h-6 w-6 ${theme.highlight}`} />
@@ -180,6 +180,60 @@ const LiveInfo = ({ theme }) => {
           )}
         </div>
       )}
+      
+      {/* 極光資訊卡片 - 新增 */}
+      <div className={`${theme.cardBg} rounded-xl p-5 ${theme.cardBorder} border-purple-300 ${theme.darkMode ? 'border-opacity-30' : ''}`}>
+        <div className="flex items-center gap-2 mb-3">
+          <div className={`${theme.darkMode ? 'text-purple-300' : 'text-purple-600'}`}>
+            <Moon className="w-5 h-5" />
+          </div>
+          <h3 className="text-lg font-semibold">北極光預測</h3>
+        </div>
+        
+        <p className={`${theme.secondaryText} mb-4`}>
+          冰島是觀測北極光的絕佳地點，特別是在9月至4月的黑夜期間。可以透過以下資源查看即時和預測的極光活動。
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a 
+            href="https://en.vedur.is/weather/forecasts/aurora/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={`p-4 rounded-lg ${theme.darkMode ? 'bg-purple-900 bg-opacity-20 hover:bg-opacity-30' : 'bg-purple-50 hover:bg-purple-100'} transition flex items-start gap-3`}
+          >
+            <div className={`${theme.darkMode ? 'text-purple-300' : 'text-purple-600'} mt-1`}>
+              <Star className="w-4 h-4" />
+            </div>
+            <div>
+              <div className="font-medium mb-1">冰島氣象局極光預測</div>
+              <div className={`text-sm ${theme.secondaryText}`}>官方提供冰島地區的極光活動預測和雲層覆蓋情況</div>
+              <div className="flex items-center text-xs mt-2">
+                <span className={theme.highlight}>查看預測</span>
+                <ExternalLink className="h-3 w-3 ml-1" />
+              </div>
+            </div>
+          </a>
+          
+          <a 
+            href="https://www.spaceweatherlive.com/en/auroral-activity/aurora-forecast.html" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={`p-4 rounded-lg ${theme.darkMode ? 'bg-purple-900 bg-opacity-20 hover:bg-opacity-30' : 'bg-purple-50 hover:bg-purple-100'} transition flex items-start gap-3`}
+          >
+            <div className={`${theme.darkMode ? 'text-purple-300' : 'text-purple-600'} mt-1`}>
+              <Star className="w-4 h-4" />
+            </div>
+            <div>
+              <div className="font-medium mb-1">Space Weather Live</div>
+              <div className={`text-sm ${theme.secondaryText}`}>提供全球極光預測和太陽活動即時資訊</div>
+              <div className="flex items-center text-xs mt-2">
+                <span className={theme.highlight}>查看預測</span>
+                <ExternalLink className="h-3 w-3 ml-1" />
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
       
       {/* 道路警報部分 */}
       <div className={`${theme.cardBg} rounded-xl p-5 ${theme.cardBorder}`}>
@@ -316,10 +370,6 @@ const LiveInfo = ({ theme }) => {
           <li className="flex items-start gap-2">
             <span className={theme.darkMode ? 'text-amber-400' : 'text-amber-500'}>•</span>
             <span>冬季道路行駛需格外謹慎，F開頭的高地道路在冬季通常會完全關閉。</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className={theme.darkMode ? 'text-amber-400' : 'text-amber-500'}>•</span>
-            <span>離線模式下仍可查看之前下載的地圖和警報信息，但請注意數據可能已過期。</span>
           </li>
         </ul>
       </div>
