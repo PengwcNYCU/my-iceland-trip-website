@@ -15,8 +15,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/2 (六)",
       title: "抵達冰島",
-      sunrise: "08:32",
-      sunset: "18:50",
+      sunrise: "08:18",
+      sunset: "18:37",
       activities: [
         {
           type: "航班抵達",
@@ -47,8 +47,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/3 (日)",
       title: "斯耐山半島初探",
-      sunrise: "08:28",
-      sunset: "18:53",
+      sunrise: "08:15",
+      sunset: "18:40",
       activities: [
         {
           time: "上午",
@@ -97,8 +97,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/4 (一)",
       title: "斯耐山半島深度旅遊",
-      sunrise: "08:25",
-      sunset: "18:56",
+      sunrise: "08:11",
+      sunset: "18:43",
       activities: [
         {
           location: "草帽山 (Kirkjufell)",
@@ -172,8 +172,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/5 (二)",
       title: "黃金圈之旅",
-      sunrise: "08:21",
-      sunset: "18:59",
+      sunrise: "08:07",
+      sunset: "18:46",
       activities: [
         {
           location: "Þingvellir 國家公園",
@@ -232,8 +232,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/6 (三)",
       title: "南岸瀑布與黑沙灘",
-      sunrise: "08:18",
-      sunset: "19:02",
+      sunrise: "08:04",
+      sunset: "18:50",
       activities: [
         {
           location: "塞里雅蘭瀑布 (Seljalandsfoss)",
@@ -298,8 +298,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/7 (四)",
       title: "蝙蝠山攝影之旅",
-      sunrise: "08:14",
-      sunset: "19:05",
+      sunrise: "08:00",
+      sunset: "18:53",
       activities: [
         {
           location: "Víkurfjara 黑沙灘與 Reynisdrangar",
@@ -354,8 +354,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/8 (五)",
       title: "冰川健行與藍冰洞",
-      sunrise: "08:11",
-      sunset: "19:08",
+      sunrise: "07:56",
+      sunset: "18:56",
       activities: [
         {
           time: "9:00 - 15:00",
@@ -385,8 +385,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/9 (六)",
       title: "返回雷克雅維克與 Sky Lagoon",
-      sunrise: "08:07",
-      sunset: "19:11",
+      sunrise: "07:53",
+      sunset: "18:59",
       activities: [
         {
           time: "上午",
@@ -428,8 +428,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/10 (日)",
       title: "快樂返程",
-      sunrise: "08:04",
-      sunset: "19:14",
+      sunrise: "07:49",
+      sunset: "19:02",
       activities: [
         {
           time: "09:00",
