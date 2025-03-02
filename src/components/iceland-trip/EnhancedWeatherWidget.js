@@ -28,9 +28,13 @@ const EnhancedWeatherWidget = ({ theme }) => {
     { name: "教會山", lat: 64.927, lon: -23.308 },
     { name: "黃金圈", lat: 64.255, lon: -21.130 },
     { name: "藍湖", lat: 63.880, lon: -22.449 },
-    { name: "冰河湖", lat: 64.047, lon: -16.181 }
+    { name: "冰河湖", lat: 64.047, lon: -16.181 },
+    { name: "維克", lat: 63.4198, lon: -19.0122 },
+    { name: "霍芬", lat: 64.2505, lon: -15.2049 },
+    { name: "塞里雅蘭瀑布", lat: 63.6149, lon: -19.9907 },
+    { name: "斯科加瀑布", lat: 63.5320, lon: -19.5114 },
+    { name: "蝙蝠山", lat: 64.2480, lon: -14.9870 }
   ];
-  
   const [selectedLocation, setSelectedLocation] = useState(travelLocations[0]);
 
   // 監視地點變化，獲取數據
