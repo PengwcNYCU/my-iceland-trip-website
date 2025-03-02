@@ -156,7 +156,7 @@ const IcelandTripContent = () => {
             className={`flex flex-col items-center py-3 px-4 ${activeSection === 'liveInfo' ? theme.text : theme.secondaryText}`}
           >
             <Info className="h-5 w-5" />
-            <span className="text-xs mt-1">資訊</span>
+            <span className="text-xs mt-1">即時</span>
           </button>
         </div>
       </nav>
