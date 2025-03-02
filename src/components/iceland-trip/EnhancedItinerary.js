@@ -15,8 +15,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/2 (六)",
       title: "抵達冰島",
-      sunrise: "08:18",
-      sunset: "18:37",
+      sunrise: "08:32",
+      sunset: "18:50",
       activities: [
         {
           type: "航班抵達",
@@ -47,8 +47,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/3 (日)",
       title: "斯耐山半島初探",
-      sunrise: "08:15",
-      sunset: "18:40",
+      sunrise: "08:28",
+      sunset: "18:53",
       activities: [
         {
           time: "上午",
@@ -97,8 +97,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/4 (一)",
       title: "斯耐山半島深度旅遊",
-      sunrise: "08:11",
-      sunset: "18:43",
+      sunrise: "08:25",
+      sunset: "18:56",
       activities: [
         {
           location: "草帽山 (Kirkjufell)",
@@ -172,8 +172,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/5 (二)",
       title: "黃金圈之旅",
-      sunrise: "08:07",
-      sunset: "18:46",
+      sunrise: "08:21",
+      sunset: "18:59",
       activities: [
         {
           location: "Þingvellir 國家公園",
@@ -222,24 +222,24 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
         "Geysir 的 Strokkur 間歇泉噴發高度可達 20-40 公尺，站在上風處避免蒸汽。"
       ],
       accommodation: {
-        name: "Vík Hostel",
-        address: "Suðurvíkurvegur 5, 870 維克, 冰島",
-        coordinates: { lat: 63.4184, lng: -19.0064 },
-        mapLink: "https://maps.app.goo.gl/AyuTnCpR1FHBAFe69",
-        transport: "從 Gullfoss 前往 Vík，車程約 2.5 小時。"
+        name: "Kirkjuteigur 23 2nd",
+        address: "Kirkjuteigur 23 2nd, 105 Reykjavík, 冰島",
+        coordinates: { lat: 64.1436, lng: -21.9186 },
+        mapLink: "https://maps.app.goo.gl/qh7qv3thg8k1LgxV6",
+        transport: "黃金圈旅遊結束後返回雷克雅維克，車程約 1.5 小時。"
       }
     },
     {
       date: "3/6 (三)",
       title: "南岸瀑布與黑沙灘",
-      sunrise: "08:04",
-      sunset: "18:50",
+      sunrise: "08:18",
+      sunset: "19:02",
       activities: [
         {
           location: "塞里雅蘭瀑布 (Seljalandsfoss)",
           coordinates: { lat: 63.615, lng: -19.991 },
           duration: "1.5-2 小時",
-          transport: "Vík → Seljalandsfoss：約 1 小時",
+          transport: "雷克雅維克 → Seljalandsfoss：約 2 小時",
           details: "體驗水簾洞瀑布",
           image: "/api/placeholder/500/300",
           description: "塞里雅蘭瀑布的特別之處在於可以走到瀑布後面，從水簾後方欣賞景色，是一種獨特的體驗。"
@@ -298,8 +298,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/7 (四)",
       title: "蝙蝠山攝影之旅",
-      sunrise: "08:00",
-      sunset: "18:53",
+      sunrise: "08:14",
+      sunset: "19:05",
       activities: [
         {
           location: "Víkurfjara 黑沙灘與 Reynisdrangar",
@@ -354,8 +354,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/8 (五)",
       title: "冰川健行與藍冰洞",
-      sunrise: "07:56",
-      sunset: "18:56",
+      sunrise: "08:11",
+      sunset: "19:08",
       activities: [
         {
           time: "9:00 - 15:00",
@@ -385,8 +385,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/9 (六)",
       title: "返回雷克雅維克與 Sky Lagoon",
-      sunrise: "07:53",
-      sunset: "18:59",
+      sunrise: "08:07",
+      sunset: "19:11",
       activities: [
         {
           time: "上午",
@@ -428,8 +428,8 @@ const EnhancedItinerary = ({ theme, setSelectedMarker }) => {
     {
       date: "3/10 (日)",
       title: "快樂返程",
-      sunrise: "07:49",
-      sunset: "19:02",
+      sunrise: "08:04",
+      sunset: "19:14",
       activities: [
         {
           time: "09:00",
