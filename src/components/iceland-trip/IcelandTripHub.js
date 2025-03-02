@@ -8,6 +8,7 @@ import MapComponent, { FallbackMapComponent } from './MapComponent';
 import EnhancedWeatherWidget from './EnhancedWeatherWidget'; 
 import LiveInfo from './liveInfo';
 import EnhancedItinerary from './EnhancedItinerary.js';
+import PenguinPet from './PenguinPet';
 
 // 主要應用組件
 const IcelandTripContent = () => {
@@ -125,6 +126,9 @@ const IcelandTripContent = () => {
           </button>
         </div>
       </nav>
+      
+      {/* Cute penguin pet */}
+      <PenguinPet theme={theme} />
     </div>
   );
 };
